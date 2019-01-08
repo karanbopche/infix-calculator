@@ -32,7 +32,7 @@ void toPostfix(char * equation)
 {
     char stack[10];
     int top=0;
-    int size = strlen(equation);
+    int size = strlen(equation)+1;
     char postfix[size];
     postfix[0] = '\0';
     char *item = strtok(equation, " "); /// delimit for each element.......
@@ -75,6 +75,7 @@ int operatorIndex(char a) {
         case '*' : ret = 2; break;
         case '/' : ret = 2; break;
         case '%' : ret = 2; break;
+        case '(' : ret = -1; break;
     }
     return ret;
 
